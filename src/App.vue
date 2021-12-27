@@ -1,30 +1,34 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts" setup>
+import { isPink } from "@/utils/oa";
+import awesomeApi from "@blink-live/awesome-api";
+import { isDev } from "@/utils/env";
+import { onBeforeMount, onMounted } from "vue";
 
-nav {
-  padding: 30px;
+onBeforeMount(() => {
+  awesomeApi.initial();
+});
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+const handleJumpToPinkApp = () => {
+  const url = "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html";
+  if (isPink) {
+    awesomeApi.openView({ url });
+  } else if (!isDev) {
+    const preUrl = encodeURIComponent(window.location.href);
+    window.location.href = `http://d.bilibili.com/download_app.html?preUrl=${preUrl}&schema=${encodeURIComponent(url)}`;
   }
+};
+
+onMounted(() => {
+  handleJumpToPinkApp();
+});
+</script>
+
+<style lang="scss">
+* {
+  touch-action: none;
 }
 </style>
