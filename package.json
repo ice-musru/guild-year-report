@@ -44,6 +44,6 @@
     "vue-cli-plugin-windicss": "~1.1.2"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.{js,ts,vue,jsx,tsx,html}": "eslint --fix"
   }
 }
