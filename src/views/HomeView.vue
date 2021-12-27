@@ -1,27 +1,120 @@
 <template>
-  <div class="home">
-    <router-link to="/report">report</router-link>
-
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="home-view h-full relative">
+    <!--  标题文字  -->
+    <div class="home-title absolute top-65px left-1/2 -ml-250px animate__animated animate__bounceInDown">
+      <div class="home-title_star absolute"></div>
+      <div class="home-title_under absolute animate__animated animate__bounceInRight"></div>
+    </div>
+    <!--  logo  -->
+    <div class="home-logo absolute left-0 top-0 animate__animated animate__rotateInDownLeft"></div>
+    <!--  人物背景  -->
+    <div class="home-person absolute bottom-0 left-0 animate__animated animate__fadeInUp"></div>
+    <!--  发光背景  -->
+    <div class="home-flight"></div>
+    <!--  不是公会成员的引导提示  -->
+    <div v-if="!canEntry" class="not-allow-tip absolute left-1/2 bottom-253px -ml-351px animate__animated animate__fadeInDown"></div>
+    <!--  底部按钮  -->
+    <HomeButton :canEntry="canEntry" class="home-button bottom-60px left-1/2 -ml-233px" @click="handleClick"></HomeButton>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue";
+import { defineComponent, onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
+import HomeButton from "@/components/home-button.vue";
 import { reportEvent } from "@/utils/report";
 export default defineComponent({
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
+  components: { HomeButton },
   setup() {
+    const router = useRouter();
+    // 点击跳转
+    const handleClick = () => {
+      // 跳转到报告页
+      router.push("/report");
+    };
+
+    const canEntry = ref(true);
+
     onMounted(() => {
       //is_administrator: 是否是公会管理人员 1、是, 2、不是
       reportEvent({ spmId: "444.77.guild-annual-summary.0.show", msg: { guild_id: 0, is_administrator: 1 } });
       reportEvent({ spmId: "444.77.guild-annual-cover.0.show", msg: { guild_id: 0 } });
     });
+
+    return { handleClick, canEntry };
   },
 });
 </script>
+
+<style scoped lang="scss">
+.home-view {
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/images/homeView/home-bg.png") no-repeat center / cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .home-flight {
+    width: 750px;
+    height: 981px;
+    background: url("../assets/images/homeView/flow-light.png") no-repeat center / cover;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.3;
+  }
+  // 人物
+  .home-person {
+    width: 100%;
+    height: 1028px;
+    background: url("../assets/images/homeView/22-33.png") no-repeat center/cover;
+  }
+  // 标题
+  .home-title {
+    width: 547px;
+    height: 249px;
+    background: url("../assets/images/homeView/title.png") no-repeat center/cover;
+    animation-delay: 0.5s;
+    .home-title_star {
+      width: 679px;
+      height: 196px;
+      background: url("../assets/images/homeView/star.png") no-repeat center/cover;
+      left: -32px;
+      top: -40px;
+      animation: pulse 3s linear infinite;
+    }
+    .home-title_under {
+      width: 559px;
+      height: 83px;
+      background: url("../assets/images/homeView/title-under.png") no-repeat center/cover;
+      bottom: -70px;
+      left: -55px;
+      animation-delay: 1s;
+    }
+  }
+  // logo
+  .home-logo {
+    width: 192px;
+    height: 86px;
+    background: url("../assets/images/homeView/logo.png") no-repeat center/cover;
+  }
+  // 引导提示
+  .not-allow-tip {
+    width: 702px;
+    height: 69px;
+    z-index: 10;
+    background: url("../assets/images/homeView/not-allow-tip.png") no-repeat center/contain;
+  }
+  //  按钮
+  .home-button {
+    position: absolute !important;
+    animation-delay: 0.8s;
+  }
+}
+</style>
