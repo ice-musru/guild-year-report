@@ -9,12 +9,16 @@
       <div class="left-cell absolute -left-10px top-1/4 ani" swiper-animate-effect="animate__fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"></div>
       <!--   文字   -->
       <div class="describe-word ml-90px mt-150px">
-        <p class="text-47px mb-30px">这一年旗下主播共开播了</p>
-        <p class="text-47px mb-55px"><span class="high-color-text text-76px">xxxx</span>小时</p>
-        <p class="text-47px mb-30px">平均每个主播每天开播</p>
-        <p class="text-47px mb-50px"><span class="high-color-text text-76px">xxxx</span>小时</p>
-        <p class="text-47px mb-30px">其中最长的一场直播是</p>
-        <div class="mb-50px flex">
+        <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年旗下主播共开播了</p>
+        <p class="text-47px mb-55px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
+          <span class="high-color-text text-76px">xxxx</span>小时
+        </p>
+        <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">平均每个主播每天开播</p>
+        <p class="text-47px mb-50px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
+          <span class="high-color-text text-76px">xxxx</span>小时
+        </p>
+        <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.5s">其中最长的一场直播是</p>
+        <div class="mb-50px flex ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
           <div class="tv-view"></div>
           <div class="tv-word">
             <p class="text-23px mb-10px" style="color: #c1ff98">直播间标题</p>
@@ -22,9 +26,9 @@
             <p class="text-23px" style="color: #fffe98">主播昵称</p>
           </div>
         </div>
-        <p class="text-38px mb-10px">直播持续了xxx小时</p>
-        <p class="text-38px mb-10px">相当于xxx个</p>
-        <p class="text-38px mb-10px">bilibili跨年晚会的时长</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">直播持续了xxx小时</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">相当于xxx个</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s">bilibili跨年晚会的时长</p>
       </div>
     </div>
     <!--  底部小电视  -->
