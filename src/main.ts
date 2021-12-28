@@ -7,6 +7,7 @@ import VConsole from "vconsole";
 import "windi.css";
 import "animate.css";
 import "swiper/dist/css/swiper.css";
+import "@/assets/style/main.scss";
 
 // 开启vConsole
 const vConsole = new VConsole();

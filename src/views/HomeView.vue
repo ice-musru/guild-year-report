@@ -2,8 +2,8 @@
   <div class="home-view h-full relative">
     <!--  标题文字  -->
     <div class="home-title absolute top-65px left-1/2 -ml-250px animate__animated animate__bounceInDown">
-      <div class="home-title_star absolute"></div>
-      <div class="home-title_under absolute animate__animated animate__bounceInRight"></div>
+      <div class="home-title_star absolute animate__animated animate__slower animate__pulse animate__infinite"></div>
+      <div class="home-title_under absolute animate__animated animate__delay-1s animate__bounceInRight"></div>
     </div>
     <!--  logo  -->
     <div class="home-logo absolute left-0 top-0 animate__animated animate__rotateInDownLeft"></div>
@@ -19,22 +19,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { computed, defineComponent, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import HomeButton from "@/components/home-button.vue";
 import { reportEvent } from "@/utils/report";
 export default defineComponent({
   name: "HomeView",
   components: { HomeButton },
   setup() {
+    const store = useStore();
     const router = useRouter();
     // 点击跳转
     const handleClick = () => {
       // 跳转到报告页
       router.push("/report");
     };
-
-    const canEntry = ref(true);
+    // 是否可以进入下一步, 否则是申请入驻
+    const canEntry = computed(() => store.getters.guildData.guild_id === -1);
 
     onMounted(() => {
       //is_administrator: 是否是公会管理人员 1、是, 2、不是
@@ -87,7 +89,6 @@ export default defineComponent({
       background: url("../assets/images/homeView/star.png") no-repeat center/cover;
       left: -32px;
       top: -40px;
-      animation: pulse 3s linear infinite;
     }
     .home-title_under {
       width: 559px;
@@ -95,7 +96,6 @@ export default defineComponent({
       background: url("../assets/images/homeView/title-under.png") no-repeat center/cover;
       bottom: -70px;
       left: -55px;
-      animation-delay: 1s;
     }
   }
   // logo

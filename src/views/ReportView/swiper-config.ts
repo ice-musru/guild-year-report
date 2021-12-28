@@ -26,16 +26,6 @@ export const options = {
       clearSwiperAnimate(this);
       console.log(this, "11");
     },
-    progress: function () {
-      const swiper = this as any;
-      for (let i = 0; i < swiper.slides.length; i++) {
-        const slide = swiper.slides[i];
-        const progress = slide.progress;
-        const translate = (progress * swiper.height) / 4;
-        const es = slide.style;
-        es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = "translate3d(0," + translate + "px,-" + translate + "px)";
-      }
-    },
     setTransition: function (speed: number) {
       const swiper = this as any;
       for (let i = 0; i < swiper.slides.length; i++) {

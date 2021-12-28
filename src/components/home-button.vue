@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
     top: 95px;
     animation-duration: 6s;
   }
-
+  // 点击查看按钮
   &.canEntry {
     background: url("../assets/images/homeView/button-bg.png") no-repeat center / contain;
     .word {
@@ -42,6 +42,7 @@ const props = withDefaults(defineProps<Props>(), {
       background: url("../assets/images/homeView/button-arrow.png") no-repeat center / contain;
     }
   }
+  // 申请入驻的按钮
   &.noCanEntry {
     background: url("../assets/images/homeView/button-entry-bg.png") no-repeat center / contain;
     .word {
