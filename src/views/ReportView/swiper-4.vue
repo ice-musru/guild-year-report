@@ -30,8 +30,8 @@
           <!--   头像     -->
           <div class="item-avatar relative"></div>
           <!--   文字     -->
-          <div class="item-word inline-flex justify-between mt-30px">
-            <span class="item-word__name max-w-130px inline-block truncate">张三是个王麻子</span>
+          <div class="item-word inline-flex justify-between items-center h-88px">
+            <span class="item-word__name max-w-130px inline-block text-multi-over">张三是个王麻子张三是个王麻子</span>
             <span class="item-word__num">100名主播</span>
           </div>
         </div>
@@ -42,7 +42,7 @@
 
 <style scoped lang="scss">
 .swiper-4 {
-  background: url("../../assets/images/swiper-3-4/swiper-3-4-bg.png") no-repeat center / cover;
+  background: url("../../assets/images/swiper-3-4/swiper-3-4-bg.png") no-repeat center / 100% 100%;
 }
 .swiper-frame {
   width: 686px;

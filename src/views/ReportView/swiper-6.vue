@@ -6,7 +6,7 @@
       <!--   top标记   -->
       <div class="top-one absolute -right-10px -top-45px ani" swiper-animate-effect="animate__fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s"></div>
       <!--   电池   -->
-      <div class="left-cell absolute -left-10px top-1/4 ani" swiper-animate-effect="animate__fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"></div>
+      <div class="left-cell absolute -left-10px top-1/4 ani" swiper-animate-effect="animate__fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0s"></div>
       <!--   文字   -->
       <div class="describe-word ml-90px mt-150px">
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年旗下主播共开播了</p>
@@ -26,9 +26,9 @@
             <p class="text-23px" style="color: #fffe98">主播昵称</p>
           </div>
         </div>
-        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">直播持续了xxx小时</p>
-        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">相当于xxx个</p>
-        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s">bilibili跨年晚会的时长</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">直播持续了xxx小时</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s">相当于xxx个</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1s">bilibili跨年晚会的时长</p>
       </div>
     </div>
     <!--  底部小电视  -->
@@ -38,7 +38,7 @@
 
 <style scoped lang="scss">
 .swiper-6 {
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-bg-1.png") no-repeat center / cover;
+  background: url("../../assets/images/swiper-6-11/swiper-6-11-bg-1.png") no-repeat center / 100% 100%;
 }
 .swiper-frame {
   width: 686px;

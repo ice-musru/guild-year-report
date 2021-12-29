@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@bilibili-live/report": "^2.0.0-alpha.4",
+    "@bilibili/js-bridge": "^1.4.4",
     "@blink-live/awesome-api": "^1.1.9",
     "@blink-live/live-activity-mobile": "^1.2.19",
     "animate.css": "^4.1.1",

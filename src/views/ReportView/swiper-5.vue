@@ -32,7 +32,7 @@
 
 <style scoped lang="scss">
 .swiper-5 {
-  background: url("../../assets/images/swiper-3-4/swiper-3-4-bg.png") no-repeat center / cover;
+  background: url("../../assets/images/swiper-3-4/swiper-3-4-bg.png") no-repeat center / 100% 100%;
 }
 .swiper-frame {
   width: 686px;

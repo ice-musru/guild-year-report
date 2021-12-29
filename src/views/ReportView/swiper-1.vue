@@ -28,7 +28,7 @@
 
 <style scoped lang="scss">
 .swiper-1 {
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-bg.png") no-repeat center / cover;
+  background: url("../../assets/images/swiper-1-2/swiper-1-2-bg.png") no-repeat center / 100% 100%;
 }
 .swiper-frame {
   width: 686px;

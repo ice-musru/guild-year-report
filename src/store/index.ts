@@ -95,13 +95,13 @@ export default createStore({
         },
       ],
       //  公会入驻时间
-      guild_entry_time: 0,
+      guild_entry_time: 1,
       //  经纪人页面是否显示
       is_staff_show: true,
       //  年度报告是否显示
       is_report_show: true,
       //  公会id
-      guild_id: 0,
+      guild_id: 1104,
     },
   },
   getters: {

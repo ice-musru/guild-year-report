@@ -1,7 +1,7 @@
 import { swiperAnimateCache, swiperAnimate, clearSwiperAnimate } from "@/lib/swiper.animate";
 
 export const options = {
-  speed: 600,
+  speed: 500,
   initialSlide: 0,
   direction: "vertical", // 垂直切换选项
   watchSlidesProgress: true,
@@ -14,17 +14,20 @@ export const options = {
       swiperAnimateCache(this);
       swiperAnimate(this);
       //  首屏加载
+      const swiper = this as any;
+      console.log(swiper.activeIndex, "activeIndex");
     },
     slideChange: function () {
       swiperAnimate(this);
       //  其余屏切换
+      const swiper = this as any;
+      console.log(swiper.activeIndex, "activeIndex");
     },
     transitionEnd: function () {
       swiperAnimate(this);
     },
     beforeDestroy: function () {
       clearSwiperAnimate(this);
-      console.log(this, "11");
     },
     setTransition: function (speed: number) {
       const swiper = this as any;
