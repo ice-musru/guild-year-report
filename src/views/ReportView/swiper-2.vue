@@ -1,4 +1,13 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const staff_last_login_time = computed(() => store.getters.guildData.staff_last_login_time || "");
+
+const last_time_hour = staff_last_login_time.value.split(":")[0] || 0;
+const last_time_min = staff_last_login_time.value.split(":")[1] || 0;
+</script>
 
 <template>
   <div class="swiper-2 h-full relative">
@@ -8,7 +17,9 @@
       <!--  文字  -->
       <div class="describe-word absolute top-120px left-85px">
         <p class="text-47px mb-35px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">
-          <span class="high-color-text text-76px">XX</span>点 <span class="high-color-text text-76px">XX</span>分
+          <span class="high-color-text text-76px">{{ last_time_hour }}</span
+          >点<span class="high-color-text text-76px">{{ last_time_min }}</span
+          >分
         </p>
         <p class="text-47px mb-56px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">这个时间点还有同学</p>
         <p class="text-47px mb-135px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">登陆了公会后台</p>

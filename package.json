@@ -4,17 +4,21 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && activity push 55335 dist",
+    "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build && activity push 55335 dist",
     "lint": "vue-cli-service lint",
     "prepare": "husky install"
   },
   "dependencies": {
     "@bilibili-live/report": "^2.0.0-alpha.4",
+    "@bilibili/h5-utils": "^1.1.7",
     "@bilibili/js-bridge": "^1.4.4",
     "@blink-live/awesome-api": "^1.1.9",
     "@blink-live/live-activity-mobile": "^1.2.19",
+    "@meforma/vue-toaster": "^1.3.0",
     "animate.css": "^4.1.1",
     "core-js": "^3.8.3",
+    "js-cookie": "^3.0.1",
     "vconsole": "^3.10.1",
     "vue": "^3.2.13",
     "vue-awesome-swiper": "3.1.3",
@@ -45,6 +49,6 @@
     "vue-cli-plugin-windicss": "~1.1.2"
   },
   "lint-staged": {
-    "*.{js,ts,vue,jsx,tsx,html}": "eslint --fix"
+    "*.{js,ts,vue,jsx,tsx}": "eslint --fix"
   }
 }

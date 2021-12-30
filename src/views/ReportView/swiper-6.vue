@@ -1,4 +1,27 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const valid_live_time = computed(() => store.getters.guildData.valid_live_time || 0);
+const avg_valid_live_time = computed(() => store.getters.guildData.avg_valid_live_time || 0);
+
+const max_live_time_conversion = computed(() => store.getters.guildData.max_live_time_conversion || 0);
+const max_live_time_title = computed(() => store.getters.guildData.max_live_time_title || 0);
+const max_live_time_cover = computed(() => store.getters.guildData.max_live_time_cover || "");
+const max_live_time_uname = computed(() => store.getters.guildData.max_live_time_uname || "");
+const max_live_time = computed(() => store.getters.guildData.max_live_time || 0);
+
+// "max_live_time": 0,
+//   //  最长的开播时长折算为xx个跨年晚会
+//   "max_live_time_conversion": 0.1,
+//   //  最长开播时长的直播间标题
+//   "max_live_time_title": "",
+//   //  最长开播时长的直播间封面
+//   "max_live_time_cover": "",
+//   //  最长开播时长的直播间主播昵称
+//   "max_live_time_uname": "",
+</script>
 
 <template>
   <div class="swiper-6 h-full relative">
@@ -11,23 +34,26 @@
       <div class="describe-word ml-90px mt-150px">
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年旗下主播共开播了</p>
         <p class="text-47px mb-55px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
-          <span class="high-color-text text-76px">xxxx</span>小时
+          <span class="high-color-text text-76px">{{ valid_live_time }}</span
+          >小时
         </p>
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">平均每个主播每天开播</p>
         <p class="text-47px mb-50px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
-          <span class="high-color-text text-76px">xxxx</span>小时
+          <span class="high-color-text text-76px">{{ avg_valid_live_time }}</span
+          >小时
         </p>
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.5s">其中最长的一场直播是</p>
         <div class="mb-50px flex ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
-          <div class="tv-view"></div>
+          <div class="tv-view" :style="{ background: `url(${max_live_time_cover}) no-repeat center / cover` }"></div>
           <div class="tv-word">
-            <p class="text-23px mb-10px" style="color: #c1ff98">直播间标题</p>
-            <p class="text-23px mb-25px" style="color: #fffe98">主播昵称</p>
-            <p class="text-23px" style="color: #fffe98">主播昵称</p>
+            <p class="text-24px mb-25px max-w-200px truncate" style="color: #c1ff98">{{ max_live_time_title }}</p>
+            <p class="text-24px mb-25px max-w-200px truncate" style="color: #fffe98">{{ max_live_time_uname }}</p>
           </div>
         </div>
-        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">直播持续了xxx小时</p>
-        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s">相当于xxx个</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">直播持续了{{ max_live_time }}小时</p>
+        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s">
+          相当于{{ max_live_time_conversion }}个
+        </p>
         <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1s">bilibili跨年晚会的时长</p>
       </div>
     </div>

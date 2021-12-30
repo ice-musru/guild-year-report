@@ -103,18 +103,31 @@ export default createStore({
       //  公会id
       guild_id: 1104,
     },
+    userInfo: {
+      state: "0", // 0: 未登录, 1: 已登录
+      mid: 0,
+      userName: "",
+      face: "",
+    },
   },
   getters: {
     guildData: (state) => state.guildData,
+    userInfo: (state) => state.userInfo,
   },
   mutations: {
     SET_GUILD_DATA(state, payload) {
       state.guildData = payload;
     },
+    SET_USER_INFO(state, payload) {
+      state.userInfo = payload;
+    },
   },
   actions: {
     setGuildData({ commit }, payload) {
       commit("SET_GUILD_DATA", payload);
+    },
+    setUserInfo({ commit }, payload) {
+      commit("SET_USER_INFO", payload);
     },
   },
   modules: {},

@@ -1,4 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const gifts_num = computed(() => store.getters.guildData.gifts_num || 0);
+const gifts_value = computed(() => store.getters.guildData.gifts_value || 0);
+</script>
 
 <template>
   <div class="swiper-5 h-full relative">
@@ -8,17 +15,17 @@
       <!--  闪电  -->
       <div class="charge-light absolute top-1/2 -right-10px ani" swiper-animate-effect="animate__slideInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
       <!--  文字  -->
-      <div class="describe-word absolute top-120px left-55px w-550px text-right">
+      <div class="describe-word absolute top-120px left-55px w-550px text-right z-5">
         <p class="text-47px mb-36px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年公会共获得</p>
         <p class="text-47px mb-50px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
-          <span class="high-color-text text-76px">XX</span>个礼物
+          <span class="high-color-text text-76px">{{ gifts_num }}</span
+          >个礼物
         </p>
         <p class="text-47px mb-36px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">价值</p>
-        <p class="text-47px mb-50px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
-          <span class="high-color-text text-76px">XXXX%</span>电池
+        <p class="text-47px mb-235px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
+          <span class="high-color-text text-76px"> {{ gifts_value }} </span>电池
         </p>
-        <p class="text-47px mb-135px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">可以买下AAAA个BBBB</p>
-        <p class="text-47px mb-22px ani green-color-text" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">
+        <p class="text-47px mb-22px ani green-color-text" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">
           这是观众姥爷们的认可
         </p>
         <p class="text-47px ani green-color-text" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.9s" swiper-animate-delay="0.8s">也是公会实力最好的见证</p>

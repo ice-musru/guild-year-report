@@ -1,4 +1,25 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const dm_num = computed(() => store.getters.guildData.dm_num || 0);
+const max_dm_num = computed(() => store.getters.guildData.max_dm_num || 0);
+const max_dm_num_live_title = computed(() => store.getters.guildData.max_dm_num_live_title || "");
+const max_dm_num_live_cover = computed(() => store.getters.guildData.max_dm_num_live_cover || "");
+const max_dm_num_live_uname = computed(() => store.getters.guildData.max_dm_num_live_uname || "");
+
+// //  弹幕总数
+// "dm_num": "",
+//   //  最多的弹幕数（场次）
+//   "max_dm_num": "",
+//   //  最多弹幕数的直播间标题
+//   "max_dm_num_live_title": "",
+//   //  最多弹幕数的直播间封面
+//   "max_dm_num_live_cover": "",
+//   //  最多弹幕数的直播间主播昵称
+//   "max_dm_num_live_uname": "",
+</script>
 
 <template>
   <div class="swiper-8 h-full relative">
@@ -11,21 +32,21 @@
       <div class="describe-word ml-90px mt-150px">
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年旗下主播共收获了</p>
         <p class="text-47px mb-55px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
-          <span class="high-color-text text-76px">xxxx</span>条弹幕
+          <span class="high-color-text text-76px">{{ dm_num }}</span
+          >条弹幕
         </p>
 
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">其中最长的一场直播是</p>
         <div class="mb-220px flex ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
-          <div class="tv-view"></div>
+          <div class="tv-view" :style="{ background: `url(${max_dm_num_live_cover}) no-repeat center / cover` }"></div>
           <div class="tv-word">
-            <p class="text-23px mb-10px" style="color: #c1ff98">直播间标题</p>
-            <p class="text-23px mb-25px" style="color: #fffe98">主播昵称</p>
-            <p class="text-23px" style="color: #fffe98">主播昵称</p>
+            <p class="text-23px mb-25px max-w-200px truncate" style="color: #c1ff98">{{ max_dm_num_live_title }}</p>
+            <p class="text-23px mb-25px max-w-200px truncate" style="color: #fffe98">{{ max_dm_num_live_uname }}</p>
           </div>
         </div>
 
         <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
-          总共产生了<span class="high-color-text">XXX条</span>弹幕
+          总共产生了<span class="high-color-text">{{ max_dm_num }}条</span>弹幕
         </p>
         <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">前方高能预警</p>
         <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">你我此刻心心相印</p>

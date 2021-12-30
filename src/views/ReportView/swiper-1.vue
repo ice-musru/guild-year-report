@@ -1,4 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const anchor_incr_num = computed(() => store.getters.guildData.anchor_incr_num || 0);
+const anchor_incr_rank = computed(() => store.getters.guildData.anchor_incr_rank || 0);
+</script>
 
 <template>
   <div class="h-full relative swiper-1">
@@ -7,11 +14,11 @@
       <div class="describe-word absolute top-120px left-85px">
         <p class="text-47px mb-35px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年公会共新增</p>
         <p class="text-47px mb-56px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
-          <span class="high-color-text text-76px">xxxx</span>个主播
+          <span class="high-color-text text-76px"> {{ anchor_incr_num || 0 }} </span>个主播
         </p>
         <p class="text-47px mb-35px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">超过</p>
         <p class="text-47px mb-135px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
-          <span class="high-color-text text-76px">xxxx</span>公会
+          <span class="high-color-text text-76px"> {{ anchor_incr_rank || 0 }}% </span>公会
         </p>
         <p class="color-text text-47px mb-22px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">变多的是同行的小伙伴</p>
         <p class="color-text text-47px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">不变的是一路向前的心</p>

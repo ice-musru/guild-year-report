@@ -1,4 +1,16 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const staff_anchors_income_rank = computed(() => {
+  const arr = store.getters.guildData.staff_anchors_income_rank || [];
+  if (arr.length < 5) {
+    arr.push(...[...Array(5 - arr.length).fill({ rank: -1, score: "", uface: "", uname: "虚位以待" })]);
+  }
+  return arr;
+});
+</script>
 
 <template>
   <div class="swiper-4 h-full">
@@ -20,19 +32,19 @@
       <div class="rank-list absolute top-200px left-60px">
         <div
           class="ran-list-item ani flex"
-          :class="[`item-${n}`]"
-          v-for="n in 5"
-          :key="n"
+          :class="[`item-${index + 1}`]"
+          v-for="(item, index) in staff_anchors_income_rank"
+          :key="index"
           swiper-animate-effect="animate__fadeInUp"
           swiper-animate-duration="0.8s"
-          :swiper-animate-delay="`0.${n + 1}s`"
+          :swiper-animate-delay="`0.${index + 1}s`"
         >
           <!--   头像     -->
-          <div class="item-avatar relative"></div>
+          <img :src="item.uface" class="item-avatar relative" />
           <!--   文字     -->
           <div class="item-word inline-flex justify-between items-center h-88px">
-            <span class="item-word__name max-w-130px inline-block text-multi-over">张三是个王麻子张三是个王麻子</span>
-            <span class="item-word__num">100名主播</span>
+            <span class="item-word__name max-w-130px inline-block max-h-88px text-multi-over">{{ item.uface }}</span>
+            <span class="item-word__num">{{ item.score }}名主播</span>
           </div>
         </div>
       </div>
@@ -97,19 +109,21 @@
   .item-avatar {
     width: 88px;
     height: 88px;
+    border-radius: 8px;
+    border: 2px solid #25cdbf;
     overflow: hidden;
     margin-left: 115px;
     margin-right: 20px;
-    &:before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: url("../../assets/images/swiper-3-4/swiper-3-4-avatar.png") no-repeat center / contain;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+    //&:before {
+    //  content: "";
+    //  display: block;
+    //  width: 100%;
+    //  height: 100%;
+    //  background: url("../../assets/images/swiper-3-4/swiper-3-4-avatar.png") no-repeat center / contain;
+    //  position: absolute;
+    //  left: 0;
+    //  top: 0;
+    //}
   }
   .item-word {
     color: #fff;

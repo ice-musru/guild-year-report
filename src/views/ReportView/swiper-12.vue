@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="swiper-12 h-full relative" :class="{ 'not-show': !is_report_show }">
+  <div class="swiper-12 h-full relative overflow-hidden" :class="{ 'not-show': !is_report_show }">
     <!--  有数据展示  -->
     <template v-if="is_report_show">
       <!--   标题   -->
@@ -92,7 +92,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-12 {
   background: url("../../assets/images/swiper-12/swiper-12-bg.png") no-repeat center / 100% 100%;
   &:after {
@@ -111,149 +111,149 @@ onMounted(() => {
       display: none;
     }
   }
-}
-.last-title {
-  width: 750px;
-  height: 228px;
-  background: url("../../assets/images/swiper-12/swiper-12-title.png") no-repeat center / contain;
-}
-.main-word {
-  width: 515px;
-  height: 87px;
-  background: linear-gradient(to right, #3abef5, transparent);
-  border-radius: 10px;
-  border-left: 1px solid #75f0ff;
-  &.page-1-1 {
-    &:before {
-      content: "";
-      display: block;
-      width: 363px;
-      height: 64px;
-      background: url("../../assets/images/swiper-12/swiper-12-word-1-1.png") no-repeat center/ contain;
-      position: absolute;
-      left: 20px;
-      top: 12px;
-    }
+  .last-title {
+    width: 750px;
+    height: 228px;
+    background: url("../../assets/images/swiper-12/swiper-12-title.png") no-repeat center / contain;
   }
-  &.page-1-2 {
-    &:before {
-      content: "";
-      display: block;
-      width: 363px;
-      height: 64px;
-      background: url("../../assets/images/swiper-12/swiper-12-word-1-2.png") no-repeat center/ contain;
-      position: absolute;
-      left: 20px;
-      top: 12px;
+  .main-word {
+    width: 515px;
+    height: 87px;
+    background: linear-gradient(to right, #3abef5, transparent);
+    border-radius: 10px;
+    border-left: 1px solid #75f0ff;
+    &.page-1-1 {
+      &:before {
+        content: "";
+        display: block;
+        width: 363px;
+        height: 64px;
+        background: url("../../assets/images/swiper-12/swiper-12-word-1-1.png") no-repeat center/ contain;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+      }
     }
-  }
-  &.page-2-1 {
-    &:before {
-      content: "";
-      display: block;
-      width: 363px;
-      height: 64px;
-      background: url("../../assets/images/swiper-12/swiper-12-word-2-1.png") no-repeat center/ contain;
-      position: absolute;
-      left: 20px;
-      top: 12px;
+    &.page-1-2 {
+      &:before {
+        content: "";
+        display: block;
+        width: 363px;
+        height: 64px;
+        background: url("../../assets/images/swiper-12/swiper-12-word-1-2.png") no-repeat center/ contain;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+      }
     }
-  }
-  &.page-2-2 {
-    &:before {
-      content: "";
-      display: block;
-      width: 363px;
-      height: 64px;
-      background: url("../../assets/images/swiper-12/swiper-12-word-2-2.png") no-repeat center/ contain;
-      position: absolute;
-      left: 20px;
-      top: 12px;
+    &.page-2-1 {
+      &:before {
+        content: "";
+        display: block;
+        width: 363px;
+        height: 64px;
+        background: url("../../assets/images/swiper-12/swiper-12-word-2-1.png") no-repeat center/ contain;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+      }
+    }
+    &.page-2-2 {
+      &:before {
+        content: "";
+        display: block;
+        width: 363px;
+        height: 64px;
+        background: url("../../assets/images/swiper-12/swiper-12-word-2-2.png") no-repeat center/ contain;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+      }
+    }
+
+    &.page-3-1 {
+      &:before {
+        content: "";
+        display: block;
+        width: 363px;
+        height: 64px;
+        background: url("../../assets/images/swiper-12/swiper-12-word-3-1.png") no-repeat center/ contain;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+      }
     }
   }
 
-  &.page-3-1 {
-    &:before {
-      content: "";
-      display: block;
-      width: 363px;
-      height: 64px;
-      background: url("../../assets/images/swiper-12/swiper-12-word-3-1.png") no-repeat center/ contain;
-      position: absolute;
-      left: 20px;
-      top: 12px;
+  .intro-word {
+    width: 497px;
+    &.page-1-1 {
+      height: 68px;
+      background: url("../../assets/images/swiper-12/swiper-12-intro-1-1.png") no-repeat center / contain;
+    }
+    &.page-1-2 {
+      height: 76px;
+      background: url("../../assets/images/swiper-12/swiper-12-intro-1-2.png") no-repeat center / contain;
+    }
+    &.page-2-1 {
+      height: 66px;
+      background: url("../../assets/images/swiper-12/swiper-12-intro-2-1.png") no-repeat center / contain;
+    }
+    &.page-2-2 {
+      height: 67px;
+      background: url("../../assets/images/swiper-12/swiper-12-intro-2-2.png") no-repeat center / contain;
+    }
+    &.page-3-1 {
+      height: 67px;
+      background: url("../../assets/images/swiper-12/swiper-12-intro-3-1.png") no-repeat center / contain;
+    }
+    &.page-3-2 {
+      height: 72px;
+      background: url("../../assets/images/swiper-12/swiper-12-intro-3-2.png") no-repeat center / contain;
     }
   }
-}
+  // 标题
+  .home-title {
+    width: 547px;
+    height: 249px;
+    background: url("../../assets/images/homeView/title.png") no-repeat center/100% 100%;
+    animation-delay: 0.5s;
+    .home-title_star {
+      width: 679px;
+      height: 196px;
+      background: url("../../assets/images/homeView/star.png") no-repeat center/100% 100%;
+      left: -32px;
+      top: -40px;
+    }
+    .home-title_under {
+      width: 559px;
+      height: 83px;
+      background: url("../../assets/images/homeView/title-under.png") no-repeat center/100% 100%;
+      bottom: -70px;
+      left: -55px;
+    }
+  }
+  .last-word-1 {
+    width: 597px;
+    height: 61px;
+    background: url("../../assets/images/swiper-12/swiper-12-last-word-1.png") no-repeat center/100% 100%;
+  }
+  .last-word-2 {
+    width: 597px;
+    height: 61px;
+    background: url("../../assets/images/swiper-12/swiper-12-last-word-2.png") no-repeat center/100% 100%;
+  }
 
-.intro-word {
-  width: 497px;
-  &.page-1-1 {
-    height: 68px;
-    background: url("../../assets/images/swiper-12/swiper-12-intro-1-1.png") no-repeat center / contain;
+  .last-explay {
+    width: 554px;
+    height: 38px;
+    background: url("../../assets/images/swiper-12/swiper-12-intro-zhu.png") no-repeat center/100% 100%;
   }
-  &.page-1-2 {
-    height: 76px;
-    background: url("../../assets/images/swiper-12/swiper-12-intro-1-2.png") no-repeat center / contain;
-  }
-  &.page-2-1 {
-    height: 66px;
-    background: url("../../assets/images/swiper-12/swiper-12-intro-2-1.png") no-repeat center / contain;
-  }
-  &.page-2-2 {
-    height: 67px;
-    background: url("../../assets/images/swiper-12/swiper-12-intro-2-2.png") no-repeat center / contain;
-  }
-  &.page-3-1 {
-    height: 67px;
-    background: url("../../assets/images/swiper-12/swiper-12-intro-3-1.png") no-repeat center / contain;
-  }
-  &.page-3-2 {
-    height: 72px;
-    background: url("../../assets/images/swiper-12/swiper-12-intro-3-2.png") no-repeat center / contain;
-  }
-}
-// 标题
-.home-title {
-  width: 547px;
-  height: 249px;
-  background: url("../../assets/images/homeView/title.png") no-repeat center/100% 100%;
-  animation-delay: 0.5s;
-  .home-title_star {
-    width: 679px;
-    height: 196px;
-    background: url("../../assets/images/homeView/star.png") no-repeat center/100% 100%;
-    left: -32px;
-    top: -40px;
-  }
-  .home-title_under {
-    width: 559px;
-    height: 83px;
-    background: url("../../assets/images/homeView/title-under.png") no-repeat center/100% 100%;
-    bottom: -70px;
-    left: -55px;
-  }
-}
-.last-word-1 {
-  width: 597px;
-  height: 61px;
-  background: url("../../assets/images/swiper-12/swiper-12-last-word-1.png") no-repeat center/100% 100%;
-}
-.last-word-2 {
-  width: 597px;
-  height: 61px;
-  background: url("../../assets/images/swiper-12/swiper-12-last-word-2.png") no-repeat center/100% 100%;
-}
 
-.last-explay {
-  width: 554px;
-  height: 38px;
-  background: url("../../assets/images/swiper-12/swiper-12-intro-zhu.png") no-repeat center/100% 100%;
-}
-
-.last-2233 {
-  width: 657px;
-  height: 526px;
-  background: url("../../assets/images/swiper-12/swiper-12-intro-2233.png") no-repeat center/100% 100%;
+  .last-2233 {
+    width: 657px;
+    height: 526px;
+    background: url("../../assets/images/swiper-12/swiper-12-intro-2233.png") no-repeat center/100% 100%;
+  }
 }
 </style>

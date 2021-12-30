@@ -19,41 +19,71 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted } from "vue";
+import { computed, defineComponent, onBeforeMount, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import HomeButton from "@/components/home-button.vue";
 import { reportEvent } from "@/utils/report";
-import { inBiliApp, initEnv } from "@bilibili/js-bridge";
 import { isDev } from "@/utils/env";
+import { isPink } from "@/utils/oa";
+import awesomeApi from "@blink-live/awesome-api";
+// @ts-ignore
+import { openApp as openAppByH5 } from "@bilibili/h5-utils";
+import { biliBridge, inBiliApp, initEnv } from "@bilibili/js-bridge";
+
 export default defineComponent({
   name: "HomeView",
   components: { HomeButton },
   setup() {
     const store = useStore();
-    const router = useRouter();
-
     // 是否可以进入下一步, 否则是申请入驻
     const canEntry = computed(() => store.getters.guildData.guild_id > 0);
 
     // 公会id
     const guild_id = computed(() => store.getters.guildData.guild_id);
 
+    const userInfo = computed(() => store.getters.userInfo);
+
+    const router = useRouter();
+
     // 点击跳转
     const handleClick = () => {
-      if (inBiliApp && canEntry.value) {
+      // 未登录，则弹出登录
+      if (inBiliApp) {
         initEnv();
+        if (+userInfo.value.state === 0) {
+          biliBridge.callNative({
+            method: "auth.login",
+            data: { type: "default" },
+            callback: () => {
+              console.log("调起登陆窗口");
+            },
+            onLogin: () => {
+              window.location.reload();
+            },
+          });
+          return false;
+        }
+      }
+      if (isDev) {
         router.push("/report");
-      } else if (inBiliApp && !canEntry.value) {
-        window.open("https://live.bilibili.com/galaxy/");
-      } else if (!inBiliApp && !isDev) {
-        const url = "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html";
-        const preUrl = encodeURIComponent(window.location.href);
-        window.location.href = `http://d.bilibili.com/download_app.html?preUrl=${preUrl}&schema=${encodeURIComponent(url)}`;
       } else {
-        router.push("/report");
+        // 跳转至app
+        if (isPink && canEntry.value) {
+          awesomeApi.openView({ url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/report" });
+        } else if (!isPink) {
+          const url = "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html";
+          openAppByH5({ schema: url, universalLink: window.location.href });
+        }
+        if (!canEntry.value) {
+          window.location.href = "https://live.bilibili.com/galaxy/";
+        }
       }
     };
+
+    onBeforeMount(() => {
+      awesomeApi.initial();
+    });
 
     onMounted(() => {
       //is_administrator: 是否是公会管理人员 1、是, 2、不是

@@ -1,4 +1,27 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "vuex";
+import { computed } from "vue";
+
+const store = useStore();
+const guard_incr_num = computed(() => store.getters.guildData.guard_incr_num || 0);
+const max_guard_incr_num = computed(() => store.getters.guildData.max_guard_incr_num || 0);
+const max_guard_incr_num_conversion = computed(() => store.getters.guildData.max_guard_incr_num_conversion || 0);
+const max_guard_incr_live_title = computed(() => store.getters.guildData.max_guard_incr_live_title || "");
+const max_guard_incr_live_cover = computed(() => store.getters.guildData.max_guard_incr_live_cover || "");
+const max_guard_incr_live_uname = computed(() => store.getters.guildData.guard_incr_num || "");
+// //  新增大航海总数
+// "guard_incr_num": 0,
+//   //  新增大航海最多的人数（场次）
+//   "max_guard_incr_num": 0,
+//   //  新增大航海最多的人数折算为xx游轮/游船的数量
+//   "max_guard_incr_num_conversion": "",
+//   //  新增大航海人数最多的直播间标题
+//   "max_guard_incr_live_title": "",
+//   //  新增大航海人数最多的直播间封面
+//   "max_guard_incr_live_cover": "",
+//   //  新增大航海人数最多的直播间主播昵称
+//   "max_guard_incr_live_uname": "",
+</script>
 
 <template>
   <div class="swiper-10 h-full relative">
@@ -9,25 +32,26 @@
       <div class="describe-word ml-90px mt-150px">
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年共有</p>
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
-          <span class="high-color-text text-76px">xxxx</span>名观众
+          <span class="high-color-text text-76px">{{ guard_incr_num }}</span
+          >名观众
         </p>
         <p class="text-47px mb-138px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">成为了该公会的大航海</p>
 
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">其中最长的一场直播是</p>
         <div class="mb-50px flex ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
-          <div class="tv-view"></div>
+          <div class="tv-view" :style="{ background: `url(${max_guard_incr_live_cover}) no-repeat center / cover` }"></div>
           <div class="tv-word">
-            <p class="text-23px mb-10px" style="color: #c1ff98">直播间标题</p>
-            <p class="text-23px mb-25px" style="color: #fffe98">主播昵称</p>
-            <p class="text-23px" style="color: #fffe98">主播昵称</p>
+            <p class="text-23px mb-25px max-w-200px truncate" style="color: #c1ff98">{{ max_guard_incr_live_title }}</p>
+            <p class="text-23px mb-25px max-w-200px truncate" style="color: #fffe98">{{ max_guard_incr_live_uname }}</p>
           </div>
         </div>
 
-        <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
-          <span class="high-color-text">XXX名</span>观众成为了主播的大航海
+        <p class="text-38px mb-10px ani max-w-520px" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
+          <span class="high-color-text">{{ max_guard_incr_num }}名</span>观众成为了主播的大航海
         </p>
         <p class="text-38px mb-10px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.7s">
-          相当于<span class="high-color-text">XXX艘邮轮</span>的水平
+          相当于<span class="high-color-text">{{ max_guard_incr_num_conversion }}</span
+          >的水平
         </p>
       </div>
     </div>

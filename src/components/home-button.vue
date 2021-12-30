@@ -15,17 +15,17 @@ const props = withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .entry-button {
   width: 466px;
   height: 214px;
-  .word {
+  > .word {
     width: 204px;
     height: 51px;
     left: 120px;
     top: 85px;
   }
-  .arrow {
+  > .arrow {
     width: 21px;
     height: 29px;
     right: 95px;
@@ -45,10 +45,10 @@ const props = withDefaults(defineProps<Props>(), {
   // 申请入驻的按钮
   &.noCanEntry {
     background: url("../assets/images/homeView/button-entry-bg.png") no-repeat center / contain;
-    .word {
+    > .word {
       background: url("../assets/images/homeView/button-entry-word.png") no-repeat center / contain;
     }
-    .arrow {
+    > .arrow {
       background: url("../assets/images/homeView/button-entry-arrow.png") no-repeat center / contain;
     }
   }
