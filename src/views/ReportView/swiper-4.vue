@@ -6,7 +6,16 @@ const store = useStore();
 const staff_anchors_income_rank = computed(() => {
   const arr = store.getters.guildData.staff_anchors_income_rank || [];
   if (arr.length < 5) {
-    arr.push(...[...Array(5 - arr.length).fill({ rank: -1, score: "", uface: "", uname: "虚位以待" })]);
+    arr.push(
+      ...[
+        ...Array(5 - arr.length).fill({
+          rank: -1,
+          score: "",
+          uface: "https://i0.hdslb.com/bfs/activity-plat/static/20211231/de8b0fe7cefc13edb9f88e6bf1d5bcf3/I7BRtiweBt.png",
+          uname: "虚位以待",
+        }),
+      ]
+    );
   }
   return arr;
 });

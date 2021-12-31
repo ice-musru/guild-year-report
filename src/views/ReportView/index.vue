@@ -3,9 +3,9 @@
     <swiper-slide v-for="swiper in swiperArr" :key="swiper">
       <component class="swiper-slide-page" :is="`swiper${swiper}`"></component>
     </swiper-slide>
-    <template #pagination>
-      <div class="swiper-pagination"></div>
-    </template>
+    <!--    <template #pagination>-->
+    <!--      <div class="swiper-pagination"></div>-->
+    <!--    </template>-->
   </swiper>
 </template>
 

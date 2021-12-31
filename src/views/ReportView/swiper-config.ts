@@ -1,25 +1,24 @@
 import { swiperAnimateCache, swiperAnimate, clearSwiperAnimate } from "@/lib/swiper.animate";
 
 export const options = {
+  effect: "fade",
   speed: 500,
   initialSlide: 0,
   direction: "vertical", // 垂直切换选项
   watchSlidesProgress: true,
-  pagination: {
-    el: ".swiper-pagination", //与slot="pagination"处 class 一致
-    clickable: true, //轮播按钮支持点击
-  },
+  // pagination: {
+  //   el: ".swiper-pagination", //与slot="pagination"处 class 一致
+  //   clickable: true, //轮播按钮支持点击
+  // },
   on: {
     init: function () {
       swiperAnimateCache(this);
       swiperAnimate(this);
       //  首屏加载
-      const swiper = this as any;
     },
     slideChange: function () {
       swiperAnimate(this);
       //  其余屏切换
-      const swiper = this as any;
     },
     transitionEnd: function () {
       swiperAnimate(this);
