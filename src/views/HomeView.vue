@@ -10,7 +10,7 @@
     <!--  人物背景  -->
     <div class="home-person absolute bottom-0 left-0 animate__animated animate__fadeInUp"></div>
     <!--  发光背景  -->
-    <div class="home-flight"></div>
+    <!--    <div class="home-flight"></div>-->
     <!--  不是公会成员的引导提示  -->
     <div v-if="!canEntry" class="not-allow-tip absolute left-1/2 bottom-253px -ml-351px animate__animated animate__fadeInDown"></div>
     <!--  底部按钮  -->
