@@ -5,9 +5,8 @@
 <script lang="ts" setup>
 // 登录
 import { biliBridge, inBiliApp, initEnv } from "@bilibili/js-bridge";
-import awesomeApi from "@blink-live/awesome-api";
 import store from "@/store";
-import { onBeforeMount, onMounted } from "vue";
+import { onMounted } from "vue";
 
 const biliLogin = () => {
   biliBridge.callNative({
@@ -21,6 +20,9 @@ const biliLogin = () => {
     },
   });
 };
+
+const isIos = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
 // 获取用户信息
 const getUserInfo = () => {
   if (inBiliApp) {
@@ -43,23 +45,24 @@ const getUserInfo = () => {
     biliBridge.callNative({
       method: "share.setShareMpcContent",
       data: {
+        onShareCallbackId: "guild_year_report_callback",
         // 自定义分享渠道和顺序
         // 客户端对于动态渠道有特殊逻辑, 如果在登录状态下，shareChannelQueue 中有dynamic渠道，会默认展示在第一个位置，如果未登录状态下即使有dynamic渠道也不会展示
         // 支持渠道参数：['generic'，'dynamic'，'weixin'，'weixin_monment'，'qq'，'sina'，'q_zone'，'copy']
-        shareChannelQueue: ["generic", "weixin", "weixin_monment", "qq", "q_zone", "sina"],
+        shareChannelQueue: ["weixin", "q_zone", "weixin_monment", "dynamic"],
         share_id: "888.57485.0.0", // 如专栏 read.column-detail.0.0.pv
-        generic: {
-          type: "text", // (必需，包含'text', 'image')
-          title: "2021年公会年度报告", // (必需)
-          imageUrl: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (必需)
-          text: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
-        },
         default: {
           type: "web", // (必需, 包含'text', 'image', 'video', 'audio', 'web')
           title: "2021年公会年度报告", // (必需)
           text: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
           url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html", // (必需)
           imageUrl: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (type为image类型必需)
+        },
+        dynamic: {
+          title: "2021年公会年度报告", // (必需)
+          content_type: isIos ? 4009 : 18, // (必需)
+          cover_url: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (必需)
+          description: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
         },
       },
       callback: (data: any) => {
@@ -72,7 +75,6 @@ const getUserInfo = () => {
       data: { type: "default" },
       callback: async (userInfo) => {
         await store.dispatch("setUserInfo", userInfo);
-        console.log(userInfo, "个人登录信息");
         if (+userInfo.state === 0) {
           biliLogin();
         }

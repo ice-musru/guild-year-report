@@ -53,7 +53,7 @@ const staff_anchors_income_rank = computed(() => {
           <!--   文字     -->
           <div class="item-word inline-flex justify-between items-center h-88px">
             <span class="item-word__name max-w-130px inline-block max-h-88px text-multi-over">{{ item.uname }}</span>
-            <span class="item-word__num">{{ item.score }}名主播</span>
+            <span class="item-word__num" v-if="item.rank !== -1">{{ item.score }}名主播</span>
           </div>
         </div>
       </div>
