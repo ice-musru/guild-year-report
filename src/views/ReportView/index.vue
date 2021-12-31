@@ -1,12 +1,21 @@
 <template>
-  <swiper ref="mySwiper" class="h-screen" :options="swiperOptions">
-    <swiper-slide v-for="swiper in swiperArr" :key="swiper">
-      <component class="swiper-slide-page" :is="`swiper${swiper}`"></component>
-    </swiper-slide>
-    <!--    <template #pagination>-->
-    <!--      <div class="swiper-pagination"></div>-->
-    <!--    </template>-->
-  </swiper>
+  <div>
+    <swiper ref="mySwiper" class="h-screen" :options="swiperOptions">
+      <swiper-slide v-for="swiper in swiperArr" :key="swiper">
+        <component class="swiper-slide-page" :is="`swiper${swiper}`"></component>
+      </swiper-slide>
+      <!--    <template #pagination>-->
+      <!--      <div class="swiper-pagination"></div>-->
+      <!--    </template>-->
+    </swiper>
+    <div class="share-ewm flex">
+      <img class="ewm-img" src="../../assets/images/share-ewm.png" alt="二维码" />
+      <div class="ml-10px flex flex-col justify-end">
+        <p class="text-12px mb-10px">请打开哔哩哔哩app</p>
+        <p class="text-12px">扫码查看</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -79,5 +88,16 @@ export default defineComponent({
 .swiper-slide-page {
   width: 100%;
   height: 100%;
+}
+.share-ewm {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  color: #3b2e98;
+  .ewm-img {
+    width: 100px;
+    height: 100px;
+  }
 }
 </style>
