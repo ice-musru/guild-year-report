@@ -44,7 +44,7 @@ const anchor_dm_rank = computed(() => {
         <!--    底部跑跑    -->
         <div
           class="bottom-paopao absolute left-1/3 -bottom-80px ani z-1"
-          swiper-animate-effect="animate__fadeInLeft"
+          swiper-animate-effect="animate__fadeInUp"
           swiper-animate-duration="0.6s"
           swiper-animate-delay="0.4s"
         ></div>
