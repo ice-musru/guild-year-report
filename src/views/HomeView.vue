@@ -70,9 +70,9 @@ export default defineComponent({
       } else {
         // 跳转至app
         if (isPink && canEntry.value) {
-          awesomeApi.openView({ url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/report" });
+          awesomeApi.openView({ url: "http://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/report" });
         } else if (!isPink) {
-          const url = "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html";
+          const url = "http://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html";
           openAppByH5({ schema: url, universalLink: window.location.href });
         }
         if (!canEntry.value) {
@@ -82,7 +82,7 @@ export default defineComponent({
     };
 
     onBeforeMount(() => {
-      awesomeApi.initial();
+      awesomeApi.initial({ enableDebug: true });
     });
 
     onMounted(() => {

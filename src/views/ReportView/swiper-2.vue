@@ -36,52 +36,52 @@ const last_time_min = staff_last_login_time.value.split(":")[1] || 0;
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-2 {
   background: url("../../assets/images/swiper-1-2/swiper-1-2-bg-2.png") no-repeat center / 100% 100%;
-}
-.swiper-frame {
-  width: 686px;
-  height: 1086px;
-  margin: 0 auto;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-bg-frame.png") no-repeat center / contain;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.cloud-bg {
-  width: 750px;
-  height: 537px;
-  background: url("../../assets/images/swiper-1-2/cloud-2.png") no-repeat center / contain;
-  z-index: 2;
-}
-.light-star {
-  width: 750px;
-  height: 684px;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-light-star.png") no-repeat center / contain;
-}
-.bottom-star {
-  width: 599px;
-  height: 252px;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-bottom-star.png") no-repeat center / contain;
-}
-.moon-area {
-  width: 325px;
-  height: 744px;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-moon.png") no-repeat center / contain;
-}
+  .swiper-frame {
+    width: 686px;
+    height: 1086px;
+    margin: 0 auto;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-bg-frame.png") no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .cloud-bg {
+    width: 750px;
+    height: 537px;
+    background: url("../../assets/images/swiper-1-2/cloud-2.png") no-repeat center / contain;
+    z-index: 2;
+  }
+  .light-star {
+    width: 750px;
+    height: 684px;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-light-star.png") no-repeat center / contain;
+  }
+  .bottom-star {
+    width: 599px;
+    height: 252px;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-bottom-star.png") no-repeat center / contain;
+  }
+  .moon-area {
+    width: 325px;
+    height: 744px;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-moon.png") no-repeat center / contain;
+  }
 
-.describe-word {
-  font-family: reeji;
-  p {
-    color: #fff;
-  }
-  .color-text {
-    color: #55fffd;
-  }
-  .high-color-text {
-    color: #ffe263;
+  .describe-word {
+    font-family: reeji;
+    p {
+      color: #fff;
+    }
+    .color-text {
+      color: #55fffd;
+    }
+    .high-color-text {
+      color: #ffe263;
+    }
   }
 }
 </style>

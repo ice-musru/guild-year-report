@@ -33,45 +33,45 @@ const anchor_incr_rank = computed(() => store.getters.guildData.anchor_incr_rank
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-1 {
   background: url("../../assets/images/swiper-1-2/swiper-1-2-bg.png") no-repeat center / 100% 100%;
-}
-.swiper-frame {
-  width: 686px;
-  height: 1086px;
-  margin: 0 auto;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-bg-frame.png") no-repeat center / contain;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.right-star {
-  width: 220px;
-  height: 185px;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-star.png") no-repeat center / contain;
-}
-.left-star {
-  width: 126px;
-  height: 121px;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-star-2.png") no-repeat center / contain;
-}
-.bottom-xds {
-  width: 183px;
-  height: 166px;
-  background: url("../../assets/images/swiper-1-2/swiper-1-2-ds.png") no-repeat center / contain;
-}
-.describe-word {
-  font-family: reeji;
-  p {
-    color: #fff;
+  .swiper-frame {
+    width: 686px;
+    height: 1086px;
+    margin: 0 auto;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-bg-frame.png") no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
-  .color-text {
-    color: #55fffd;
+  .right-star {
+    width: 220px;
+    height: 185px;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-star.png") no-repeat center / contain;
   }
-  .high-color-text {
-    color: #ffe263;
+  .left-star {
+    width: 126px;
+    height: 121px;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-star-2.png") no-repeat center / contain;
+  }
+  .bottom-xds {
+    width: 183px;
+    height: 166px;
+    background: url("../../assets/images/swiper-1-2/swiper-1-2-ds.png") no-repeat center / contain;
+  }
+  .describe-word {
+    font-family: reeji;
+    p {
+      color: #fff;
+    }
+    .color-text {
+      color: #55fffd;
+    }
+    .high-color-text {
+      color: #ffe263;
+    }
   }
 }
 </style>

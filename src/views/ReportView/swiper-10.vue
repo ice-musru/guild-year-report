@@ -60,62 +60,62 @@ const max_guard_incr_live_uname = computed(() => store.getters.guildData.guard_i
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-10 {
   background: url("../../assets/images/swiper-6-11/swiper-6-11-bg-1.png") no-repeat center / 100% 100%;
-}
-.swiper-frame {
-  width: 686px;
-  height: 1086px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-frame-1.png") no-repeat center / contain;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.top-one {
-  width: 165px;
-  height: 168px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-top1.png") no-repeat center / contain;
-}
-.left-cell {
-  width: 106px;
-  height: 124px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-cell.png") no-repeat center / contain;
-}
-.bottom-tv {
-  width: 750px;
-  height: 293px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-little-tv.png") no-repeat center / contain;
-}
-.tv-view {
-  width: 256px;
-  height: 152px;
-  border: 3px solid #ffe263;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-right: 15px;
-}
-.describe-word {
-  font-family: reeji;
-  p {
-    color: #fff;
+  .swiper-frame {
+    width: 686px;
+    height: 1086px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-frame-1.png") no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
-  .color-text {
-    color: #55fffd;
+  .top-one {
+    width: 165px;
+    height: 168px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-top1.png") no-repeat center / contain;
   }
-  .high-color-text {
-    color: #ffe263;
+  .left-cell {
+    width: 106px;
+    height: 124px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-cell.png") no-repeat center / contain;
   }
-}
-.top-zongdu {
-  width: 226px;
-  height: 218px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-buy-2.png") no-repeat center / contain;
-}
-.bottom-chuan {
-  width: 397px;
-  height: 307px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-chuan.png") no-repeat center / contain;
+  .bottom-tv {
+    width: 750px;
+    height: 293px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-little-tv.png") no-repeat center / contain;
+  }
+  .tv-view {
+    width: 256px;
+    height: 152px;
+    border: 3px solid #ffe263;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  .describe-word {
+    font-family: reeji;
+    p {
+      color: #fff;
+    }
+    .color-text {
+      color: #55fffd;
+    }
+    .high-color-text {
+      color: #ffe263;
+    }
+  }
+  .top-zongdu {
+    width: 226px;
+    height: 218px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-buy-2.png") no-repeat center / contain;
+  }
+  .bottom-chuan {
+    width: 397px;
+    height: 307px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-chuan.png") no-repeat center / contain;
+  }
 }
 </style>

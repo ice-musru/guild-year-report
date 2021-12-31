@@ -34,7 +34,7 @@ const anchor_guard_rank = computed(() => {
             :swiper-animate-delay="`0.${index + 1}s`"
           >
             <!--   头像     -->
-            <img :src="item.uface" class="item-avatar relative" />
+            <img :src="item.uface || ''" class="item-avatar relative" />
             <!--   文字     -->
             <div class="item-word inline-flex justify-between items-center h-88px">
               <span class="item-word__name max-w-130px inline-block max-h-88px text-multi-over">{{ item.uname }}</span>
@@ -53,7 +53,7 @@ const anchor_guard_rank = computed(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-11 {
   background: url("../../assets/images/swiper-6-11/swiper-6-11-bg-2.png") no-repeat center / 100% 100%;
 
@@ -96,72 +96,72 @@ const anchor_guard_rank = computed(() => {
       z-index: -1;
     }
   }
-}
 
-.rank-title-4 {
-  width: 578px;
-  height: 107px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-title-3.png") no-repeat center / contain;
-}
+  .rank-title-4 {
+    width: 578px;
+    height: 107px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-title-3.png") no-repeat center / contain;
+  }
 
-.rank-list {
-  width: 536px;
-  @for $i from 1 to 6 {
-    .item-#{$i} {
-      width: 536px;
-      height: 116px;
-      margin-bottom: 23px;
-      background: url("../../assets/images/swiper-3-4/swiper-3-4-rank-#{$i}.png") no-repeat center / contain;
-      @if ($i >1) {
-        background-position-x: 8px;
+  .rank-list {
+    width: 536px;
+    @for $i from 1 to 6 {
+      .item-#{$i} {
+        width: 536px;
+        height: 116px;
+        margin-bottom: 23px;
+        background: url("../../assets/images/swiper-3-4/swiper-3-4-rank-#{$i}.png") no-repeat center / contain;
+        @if ($i >1) {
+          background-position-x: 8px;
+        }
+        @if ($i >=4) {
+          background-position-x: 16px;
+        }
       }
-      @if ($i >=4) {
-        background-position-x: 16px;
-      }
+    }
+
+    .item-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 8px;
+      border: 3px solid #ffd8fd;
+      overflow: hidden;
+      margin-left: 115px;
+      margin-right: 20px;
+      //&:before {
+      //  content: "";
+      //  display: block;
+      //  width: 100%;
+      //  height: 100%;
+      //  background: url("../../assets/images/swiper-6-11/swiper-6-11-avatar.png") no-repeat center / contain;
+      //  position: absolute;
+      //  left: 0;
+      //  top: 0;
+      //}
+    }
+    .item-word {
+      color: #fff;
+      font-size: 26px;
+      width: 306px;
+    }
+  }
+  .rank-word {
+    font-family: reeji;
+    p {
+      color: #666dff;
     }
   }
 
-  .item-avatar {
-    width: 88px;
-    height: 88px;
-    border-radius: 8px;
-    border: 3px solid #ffd8fd;
-    overflow: hidden;
-    margin-left: 115px;
-    margin-right: 20px;
-    //&:before {
-    //  content: "";
-    //  display: block;
-    //  width: 100%;
-    //  height: 100%;
-    //  background: url("../../assets/images/swiper-6-11/swiper-6-11-avatar.png") no-repeat center / contain;
-    //  position: absolute;
-    //  left: 0;
-    //  top: 0;
-    //}
+  .big-hanghai {
+    width: 143px;
+    height: 140px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-buy-1.png") no-repeat center / contain;
   }
-  .item-word {
-    color: #fff;
-    font-size: 26px;
-    width: 306px;
-  }
-}
-.rank-word {
-  font-family: reeji;
-  p {
-    color: #666dff;
-  }
-}
 
-.big-hanghai {
-  width: 143px;
-  height: 140px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-buy-1.png") no-repeat center / contain;
-}
-
-.big-star {
-  width: 194px;
-  height: 194px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-star.png") no-repeat center / contain;
+  .big-star {
+    width: 194px;
+    height: 194px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-star.png") no-repeat center / contain;
+  }
 }
 </style>

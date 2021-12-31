@@ -75,7 +75,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-slide-page {
   width: 100%;
   height: 100%;

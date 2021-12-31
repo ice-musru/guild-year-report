@@ -15,13 +15,11 @@ export const options = {
       swiperAnimate(this);
       //  首屏加载
       const swiper = this as any;
-      console.log(swiper.activeIndex, "activeIndex");
     },
     slideChange: function () {
       swiperAnimate(this);
       //  其余屏切换
       const swiper = this as any;
-      console.log(swiper.activeIndex, "activeIndex");
     },
     transitionEnd: function () {
       swiperAnimate(this);

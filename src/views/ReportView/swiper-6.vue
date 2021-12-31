@@ -34,12 +34,12 @@ const max_live_time = computed(() => store.getters.guildData.max_live_time || 0)
       <div class="describe-word ml-90px mt-150px">
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年旗下主播共开播了</p>
         <p class="text-47px mb-55px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
-          <span class="high-color-text text-76px">{{ valid_live_time }}</span
+          <span class="high-color-text text-56px">{{ valid_live_time }}</span
           >小时
         </p>
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">平均每个主播每天开播</p>
         <p class="text-47px mb-50px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
-          <span class="high-color-text text-76px">{{ avg_valid_live_time }}</span
+          <span class="high-color-text text-56px">{{ avg_valid_live_time }}</span
           >小时
         </p>
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.5s">其中最长的一场直播是</p>
@@ -62,52 +62,52 @@ const max_live_time = computed(() => store.getters.guildData.max_live_time || 0)
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-6 {
   background: url("../../assets/images/swiper-6-11/swiper-6-11-bg-1.png") no-repeat center / 100% 100%;
-}
-.swiper-frame {
-  width: 686px;
-  height: 1086px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-frame-1.png") no-repeat center / contain;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.top-one {
-  width: 165px;
-  height: 168px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-top1.png") no-repeat center / contain;
-}
-.left-cell {
-  width: 106px;
-  height: 124px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-cell.png") no-repeat center / contain;
-}
-.bottom-tv {
-  width: 750px;
-  height: 293px;
-  background: url("../../assets/images/swiper-6-11/swiper-6-11-little-tv.png") no-repeat center / contain;
-}
-.tv-view {
-  width: 256px;
-  height: 152px;
-  border: 3px solid #ffe263;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-right: 15px;
-}
-.describe-word {
-  font-family: reeji;
-  p {
-    color: #fff;
+  .swiper-frame {
+    width: 686px;
+    height: 1086px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-frame-1.png") no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
-  .color-text {
-    color: #55fffd;
+  .top-one {
+    width: 165px;
+    height: 168px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-top1.png") no-repeat center / contain;
   }
-  .high-color-text {
-    color: #ffe263;
+  .left-cell {
+    width: 106px;
+    height: 124px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-cell.png") no-repeat center / contain;
+  }
+  .bottom-tv {
+    width: 750px;
+    height: 293px;
+    background: url("../../assets/images/swiper-6-11/swiper-6-11-little-tv.png") no-repeat center / contain;
+  }
+  .tv-view {
+    width: 256px;
+    height: 152px;
+    border: 3px solid #ffe263;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  .describe-word {
+    font-family: reeji;
+    p {
+      color: #fff;
+    }
+    .color-text {
+      color: #55fffd;
+    }
+    .high-color-text {
+      color: #ffe263;
+    }
   }
 }
 </style>

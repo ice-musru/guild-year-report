@@ -37,48 +37,48 @@ const gifts_value = computed(() => store.getters.guildData.gifts_value || 0);
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .swiper-5 {
   background: url("../../assets/images/swiper-3-4/swiper-3-4-bg.png") no-repeat center / 100% 100%;
-}
-.swiper-frame {
-  width: 686px;
-  height: 1086px;
-  background: url("../../assets/images/swiper-3-4/swiper-3-4-bg-frame.png") no-repeat center / contain;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.charge-cell {
-  width: 168px;
-  height: 186px;
-  background: url("../../assets/images/swiper-3-4/swiper-3-4-cell.png") no-repeat center / contain;
-}
-.charge-light {
-  width: 116px;
-  height: 166px;
-  background: url("../../assets/images/swiper-3-4/swiper-3-4-light.png") no-repeat center / contain;
-}
-.start-sail {
-  width: 744px;
-  height: 370px;
-  background: url("../../assets/images/swiper-3-4/swiper-3-4-sail.png") no-repeat center / contain;
-}
+  .swiper-frame {
+    width: 686px;
+    height: 1086px;
+    background: url("../../assets/images/swiper-3-4/swiper-3-4-bg-frame.png") no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .charge-cell {
+    width: 168px;
+    height: 186px;
+    background: url("../../assets/images/swiper-3-4/swiper-3-4-cell.png") no-repeat center / contain;
+  }
+  .charge-light {
+    width: 116px;
+    height: 166px;
+    background: url("../../assets/images/swiper-3-4/swiper-3-4-light.png") no-repeat center / contain;
+  }
+  .start-sail {
+    width: 744px;
+    height: 370px;
+    background: url("../../assets/images/swiper-3-4/swiper-3-4-sail.png") no-repeat center / contain;
+  }
 
-.describe-word {
-  font-family: reeji;
-  p {
-    color: #fff;
-  }
-  .color-text {
-    color: #55fffd;
-  }
-  .high-color-text {
-    color: #ffe263;
-  }
-  .green-color-text {
-    color: #82ffc4;
+  .describe-word {
+    font-family: reeji;
+    p {
+      color: #fff;
+    }
+    .color-text {
+      color: #55fffd;
+    }
+    .high-color-text {
+      color: #ffe263;
+    }
+    .green-color-text {
+      color: #82ffc4;
+    }
   }
 }
 </style>
