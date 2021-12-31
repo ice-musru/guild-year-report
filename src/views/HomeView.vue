@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onBeforeMount, onMounted } from "vue";
+import { computed, defineComponent, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import HomeButton from "@/components/home-button.vue";
@@ -70,9 +70,9 @@ export default defineComponent({
       } else {
         // 跳转至app
         if (isPink && canEntry.value) {
-          awesomeApi.openView({ url: "http://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/report" });
+          awesomeApi.openView({ url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/report/?-Abrowser=live&is_live_webview=1" });
         } else if (!isPink) {
-          const url = "http://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html";
+          const url = "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/?-Abrowser=live&is_live_webview=1";
           openAppByH5({ schema: url, universalLink: window.location.href });
         }
         if (!canEntry.value) {
@@ -80,10 +80,6 @@ export default defineComponent({
         }
       }
     };
-
-    onBeforeMount(() => {
-      awesomeApi.initial({ enableDebug: true });
-    });
 
     onMounted(() => {
       //is_administrator: 是否是公会管理人员 1、是, 2、不是

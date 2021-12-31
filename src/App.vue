@@ -7,7 +7,6 @@
 import { biliBridge, inBiliApp, initEnv } from "@bilibili/js-bridge";
 import store from "@/store";
 import { onMounted } from "vue";
-
 const biliLogin = () => {
   biliBridge.callNative({
     method: "auth.login",
@@ -28,48 +27,48 @@ const getUserInfo = () => {
   if (inBiliApp) {
     initEnv();
     // 设置分享
-    biliBridge.callNative({
-      method: "share.setShareContent",
-      data: {
-        share_id: "888.57485.0.0", // 如专栏 read.column-detail.0.0.pv
-        type: "web", // 'web'|'image'|'video'
-        title: "2021年公会年度报告",
-        text: "2021公会专属年度报告已生成，快来看看吧~",
-        url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html",
-        image_url: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png",
-      },
-      callback() {
-        console.log("成功设置分享");
-      },
-    });
-
     // biliBridge.callNative({
-    //   method: "share.setShareMpcContent",
+    //   method: "share.setShareContent",
     //   data: {
-    //     onShareCallbackId: "guild_year_report_callback",
-    //     // 自定义分享渠道和顺序
-    //     // 客户端对于动态渠道有特殊逻辑, 如果在登录状态下，shareChannelQueue 中有dynamic渠道，会默认展示在第一个位置，如果未登录状态下即使有dynamic渠道也不会展示
-    //     // 支持渠道参数：['generic'，'dynamic'，'weixin'，'weixin_monment'，'qq'，'sina'，'q_zone'，'copy']
-    //     shareChannelQueue: ["weixin", "q_zone", "weixin_monment", "dynamic"],
     //     share_id: "888.57485.0.0", // 如专栏 read.column-detail.0.0.pv
-    //     default: {
-    //       type: "web", // (必需, 包含'text', 'image', 'video', 'audio', 'web')
-    //       title: "2021年公会年度报告", // (必需)
-    //       text: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
-    //       url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html", // (必需)
-    //       imageUrl: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (type为image类型必需)
-    //     },
-    //     dynamic: {
-    //       title: "2021年公会年度报告", // (必需)
-    //       content_type: isIos ? 4009 : 18, // (必需)
-    //       cover_url: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (必需)
-    //       description: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
-    //     },
+    //     type: "web", // 'web'|'image'|'video'
+    //     title: "2021年公会年度报告",
+    //     text: "2021公会专属年度报告已生成，快来看看吧~",
+    //     url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/?-Abrowser=live&is_live_webview=1",
+    //     image_url: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png",
     //   },
-    //   callback: (data: any) => {
-    //     console.log(data, "分享设置!!!");
+    //   callback() {
+    //     console.log("成功设置分享");
     //   },
     // });
+
+    biliBridge.callNative({
+      method: "share.setShareMpcContent",
+      data: {
+        onShareCallbackId: "guild_year_report_callback",
+        // 自定义分享渠道和顺序
+        // 客户端对于动态渠道有特殊逻辑, 如果在登录状态下，shareChannelQueue 中有dynamic渠道，会默认展示在第一个位置，如果未登录状态下即使有dynamic渠道也不会展示
+        // 支持渠道参数：['generic'，'dynamic'，'weixin'，'weixin_monment'，'qq'，'sina'，'q_zone'，'copy']
+        shareChannelQueue: ["weixin", "q_zone", "weixin_monment", "dynamic"],
+        share_id: "888.57485.0.0", // 如专栏 read.column-detail.0.0.pv
+        default: {
+          type: "web", // (必需, 包含'text', 'image', 'video', 'audio', 'web')
+          title: "2021年公会年度报告", // (必需)
+          text: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
+          url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html", // (必需)
+          imageUrl: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (type为image类型必需)
+        },
+        dynamic: {
+          title: "2021年公会年度报告", // (必需)
+          content_type: isIos ? 4009 : 18, // (必需)
+          cover_url: "https://i0.hdslb.com/bfs/activity-plat/static/20211230/de8b0fe7cefc13edb9f88e6bf1d5bcf3/leKkzJVEpU.png", // (必需)
+          description: "2021公会专属年度报告已生成，快来看看吧~", // (必需)
+        },
+      },
+      callback: (data: any) => {
+        console.log(data, "分享设置!!!");
+      },
+    });
     // 获取登录信息
     biliBridge.callNative({
       method: "auth.getUserInfo",
