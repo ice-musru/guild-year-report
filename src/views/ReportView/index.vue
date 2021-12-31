@@ -11,8 +11,8 @@
     <div class="share-ewm flex">
       <img class="ewm-img" src="../../assets/images/share-ewm.png" alt="二维码" />
       <div class="ml-10px flex flex-col justify-end">
-        <p class="text-12px mb-10px">请打开哔哩哔哩app</p>
-        <p class="text-12px">扫码查看</p>
+        <p class="text-16px mb-10px">请打开哔哩哔哩app</p>
+        <p class="text-16px">扫码查看</p>
       </div>
     </div>
   </div>

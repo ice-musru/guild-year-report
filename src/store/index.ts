@@ -11,21 +11,21 @@ export default createStore({
       staff_last_login_time: "",
       //  经纪人拉新排行TOP5
       staff_anchors_incr_rank: [
-        {
-          rank: 0,
-          score: "",
-          uface: "",
-          uname: "",
-        },
+        // {
+        //   rank: 0,
+        //   score: "",
+        //   uface: "",
+        //   uname: "",
+        // },
       ],
       //  经纪人主播收益排行TOP5
       staff_anchors_income_rank: [
-        {
-          rank: 0,
-          score: "",
-          uface: "",
-          uname: "",
-        },
+        // {
+        //   rank: 0,
+        //   score: "",
+        //   uface: "",
+        //   uname: "",
+        // },
       ],
       //  获取的礼物总数
       gifts_num: 0,
@@ -47,12 +47,12 @@ export default createStore({
       max_live_time_uname: "",
       //  主播开播时长排行TOP5
       anchor_live_time_rank: [
-        {
-          rank: 0,
-          score: "",
-          uface: "",
-          uname: "",
-        },
+        // {
+        //   rank: 0,
+        //   score: "",
+        //   uface: "",
+        //   uname: "",
+        // },
       ],
       //  弹幕总数
       dm_num: "",
@@ -66,12 +66,12 @@ export default createStore({
       max_dm_num_live_uname: "",
       //  主播弹幕数排行TOP5
       anchor_dm_rank: [
-        {
-          rank: 0,
-          score: "",
-          uface: "",
-          uname: "",
-        },
+        // {
+        //   rank: 0,
+        //   score: "",
+        //   uface: "",
+        //   uname: "",
+        // },
       ],
       //  新增大航海总数
       guard_incr_num: 0,
@@ -87,12 +87,12 @@ export default createStore({
       max_guard_incr_live_uname: "",
       //  主播大航海排名
       anchor_guard_rank: [
-        {
-          rank: 0,
-          score: "",
-          uface: "",
-          uname: "",
-        },
+        // {
+        //   rank: 0,
+        //   score: "",
+        //   uface: "",
+        //   uname: "",
+        // },
       ],
       //  公会入驻时间
       guild_entry_time: 1,
