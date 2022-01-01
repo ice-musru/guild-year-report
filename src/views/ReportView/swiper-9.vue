@@ -175,6 +175,7 @@ const anchor_dm_rank = computed(() => {
   }
   .rank-word {
     font-family: reeji;
+    z-index: 10;
     p {
       color: #666dff;
     }

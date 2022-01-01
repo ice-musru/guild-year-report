@@ -31,7 +31,7 @@ const max_live_time = computed(() => store.getters.guildData.max_live_time || 0)
       <!--   电池   -->
       <div class="left-cell absolute -left-10px top-1/4 ani" swiper-animate-effect="animate__fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0s"></div>
       <!--   文字   -->
-      <div class="describe-word ml-90px mt-150px">
+      <div class="describe-word ml-90px mt-150px relative z-10">
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年旗下主播共开播了</p>
         <p class="text-47px mb-55px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
           <span class="high-color-text text-56px">{{ valid_live_time }}</span

@@ -9,13 +9,13 @@ const gifts_value = computed(() => store.getters.guildData.gifts_value || 0);
 
 <template>
   <div class="swiper-5 h-full relative">
-    <div class="swiper-frame">
+    <div class="swiper-frame relative">
       <!--  电池  -->
       <div class="charge-cell absolute -top-5px left-25px ani" swiper-animate-effect="animate__fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s"></div>
       <!--  闪电  -->
       <div class="charge-light absolute top-1/2 -right-10px ani" swiper-animate-effect="animate__slideInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
       <!--  文字  -->
-      <div class="describe-word absolute top-120px left-55px w-550px text-right z-5">
+      <div class="describe-word absolute top-120px left-55px w-550px text-right z-10">
         <p class="text-47px mb-36px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">这一年公会共获得</p>
         <p class="text-47px mb-50px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.2s">
           <span class="high-color-text text-76px">{{ gifts_num }}</span

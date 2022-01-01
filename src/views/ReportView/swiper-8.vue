@@ -37,7 +37,7 @@ const max_dm_num_live_uname = computed(() => store.getters.guildData.max_dm_num_
         </p>
 
         <p class="text-47px mb-30px ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">其中最长的一场直播是</p>
-        <div class="mb-220px flex ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
+        <div class="mb-150px flex ani" swiper-animate-effect="animate__fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
           <div class="tv-view" :style="{ background: `url(${max_dm_num_live_cover}) no-repeat center / cover` }"></div>
           <div class="tv-word">
             <p class="text-23px mb-25px max-w-200px truncate" style="color: #c1ff98">{{ max_dm_num_live_title }}</p>
