@@ -24,9 +24,9 @@ import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import HomeButton from "@/components/home-button.vue";
 import { reportEvent } from "@/utils/report";
-import { isDev } from "@/utils/env";
+import { isDev, isPreview } from "@/utils/env";
 import { isPink } from "@/utils/oa";
-import awesomeApi from "@blink-live/awesome-api";
+import Cookies from "js-cookie";
 // @ts-ignore
 import { openApp as openAppByH5 } from "@bilibili/h5-utils";
 import { biliBridge, inBiliApp, initEnv } from "@bilibili/js-bridge";
@@ -45,6 +45,27 @@ export default defineComponent({
     const userInfo = computed(() => store.getters.userInfo);
 
     const router = useRouter();
+
+    const getJumpQuery = () => {
+      const uuid = Cookies.get("_uuid");
+      const h5awaken = encodeURIComponent(btoa(`open_app_from_type=h5&open_app_uuid=${uuid}&open_app_url=${encodeURIComponent(window.location.href)}&open_app_addition=`));
+      const queryObj: any = Object.assign(
+        {},
+        {
+          extra_jump_from: 27017,
+          from: 27017,
+          is_room_feed: 0,
+          h5awaken,
+        }
+      );
+      const queryArr: string[] = [];
+      for (const key in queryObj) {
+        queryArr.push(`${key}=${queryObj[key]}`);
+      }
+      const query = `?${queryArr.join("&")}`;
+
+      return { query };
+    };
 
     // 点击跳转
     const handleClick = () => {
@@ -70,10 +91,13 @@ export default defineComponent({
       } else {
         // 跳转至app
         if (isPink && canEntry.value) {
-          awesomeApi.openView({ url: "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/report/?-Abrowser=live&is_live_webview=1" });
+          router.push("/report");
         } else if (!isPink) {
-          const url = "https://www.bilibili.com/blackboard/live/activity-MYvp70P25D.html/#/?-Abrowser=live&is_live_webview=1";
-          openAppByH5({ schema: url, universalLink: window.location.href });
+          const url = `bilibili://browser?url=https://www.bilibili.com/blackboard/${isPreview ? "preview/" : ""}live/activity-MYvp70P25D.html/#/`;
+          const { query } = getJumpQuery();
+          const link = window.location.href.split("?")[0] + query;
+          openAppByH5({ schema: url, universalLink: link });
+          // window.location.href = `https://d.bilibili.com/download_app.html?preUrl=${encodeURIComponent(link)}&schema=${encodeURIComponent(url)}`;
         }
         if (!canEntry.value) {
           window.location.href = "https://live.bilibili.com/galaxy/";

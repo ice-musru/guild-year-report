@@ -1004,7 +1004,7 @@
     "@plat-components/utils2" "^1.5.0"
     lodash-es "^4.17.15"
 
-"@bilibili/share-h5-next@^2.3.7":
+"@bilibili/share-h5-next@^2.3.7", "@bilibili/share-h5-next@^2.4.14":
   version "2.4.14"
   resolved "http://registry.npm.bilibili.co/@bilibili/share-h5-next/download/@bilibili/share-h5-next-2.4.14.tgz#419f0aac7a25088c6e014468004d06f68933e117"
   integrity sha1-QZ8KrHolCIxuAURoAE0G9okz4Rc=
@@ -1283,6 +1283,11 @@
   integrity sha512-5kPLG5BKpWYkw/LVOGWpiq3nEVqxiN32rTgI53Sk12/xHFQ2rG3ehI9IO+O3W2QoKeyB92dJkoka8SUm6BX1pA==
   dependencies:
     "@types/node" "*"
+
+"@types/js-cookie@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npmmirror.com/@types/js-cookie/download/@types/js-cookie-3.0.1.tgz#04aa743e2e0a85a22ee9aa61f6591a8bc19b5d68"
+  integrity sha512-7wg/8gfHltklehP+oyJnZrz9XBuX5ZPP4zB6UsI84utdlkRYLnOm2HfpLXazTwZA+fpGn0ir8tGNgVnMEleBGQ==
 
 "@types/json-schema@*", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8", "@types/json-schema@^7.0.9":
   version "7.0.9"
